@@ -90,9 +90,9 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=elaravel      # tên database đã import
-DB_USERNAME=root           # XAMPP mặc định root
-DB_PASSWORD=               # XAMPP root không có mật khẩu
+DB_DATABASE=homehealthkit      # tên database đã import
+DB_USERNAME=root               # XAMPP mặc định root
+DB_PASSWORD=                   # XAMPP root không có mật khẩu
 ```
 
 4. Xóa cache config:
@@ -120,6 +120,7 @@ php artisan serve
 Truy cập tại: **[http://127.0.0.1:8000]**
 
 Email và password để vào trang admin:
+
 Email: user@admin.com
 Password: 123456
 
