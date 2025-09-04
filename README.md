@@ -41,7 +41,7 @@ Website được xây dựng bằng **PHP (Laravel Framework)** và **MySQL**, h
 
 ## ⚙️ Cài đặt và chạy dự án
 
-### 1️⃣ Clone project vào thư mục htdocs trong xampp
+### 1️⃣ Clone project
 ```bash
 git clone https://github.com/Vutridang/cn-dx22tt8-vutridang-webthietbiyte-laravel.git
 cd cn-dx22tt8-vutridang-webthietbiyte-laravel
