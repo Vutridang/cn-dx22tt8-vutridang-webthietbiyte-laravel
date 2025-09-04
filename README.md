@@ -41,38 +41,75 @@ Website được xây dựng bằng **PHP (Laravel Framework)** và **MySQL**, h
 
 ## ⚙️ Cài đặt và chạy dự án
 
-### 1️⃣ Clone project
+### 1️⃣ Clone project vào thư mục htdocs trong xampp
 ```bash
 git clone https://github.com/Vutridang/cn-dx22tt8-vutridang-webthietbiyte-laravel.git
 cd cn-dx22tt8-vutridang-webthietbiyte-laravel
 ````
 
-### 2️⃣ Cài đặt dependencies
+### 2️⃣ Xoá file lock và folder vendor:
+```bash
+rm composer.lock
+rm -rf vendor
+```
+
+### Cài lại packages tương thích với PHP hiện tại:
+
+```bash
+composer update
+```
+
+### Nếu muốn khớp với version Laravel gốc (Không bắt buộc)
+
+* Cài PHP version **7.1.x hoặc 7.2** (xem project cũ viết năm 2018 → Laravel 5.6/5.7).
+* Chạy:
 
 ```bash
 composer install
 ```
 
-### 3️⃣ Tạo file môi trường
+---
+
+## 3️⃣ Cấu hình .env
+
+1. Copy `.env.example` thành `.env`:
 
 ```bash
 cp .env.example .env
 ```
 
-* Chỉnh sửa `.env` theo thông tin database MySQL của bạn:
-
-```env
-DB_DATABASE=homehealthkit
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-### 4️⃣ Tạo key và migrate database
+2. Sinh `APP_KEY`:
 
 ```bash
 php artisan key:generate
-php artisan migrate --seed
 ```
+
+3. Chỉnh database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=elaravel      # tên database đã import
+DB_USERNAME=root           # XAMPP mặc định root
+DB_PASSWORD=               # XAMPP root không có mật khẩu
+```
+
+4. Xóa cache config:
+
+```bash
+php artisan config:clear
+php artisan cache:clear
+```
+
+---
+
+## 4️⃣ Import database
+
+* Dùng phpMyAdmin import file SQL (`homehealthkit.sql`) vào database `homehealthkit`.
+* Đảm bảo **tên database và thông tin user trong `.env` khớp**.
+
+---
 
 ### 5️⃣ Chạy server
 
